@@ -1,0 +1,168 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/backgroundColor"
+    tools:context=".MainActivity">
+
+    <LinearLayout
+        android:layout_marginTop="15dp"
+        android:id="@+id/logo_wrapper"
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        android:layout_marginLeft="50dp"
+        android:layout_marginRight="50dp"
+        android:layout_marginBottom="10dp"
+        android:layout_centerHorizontal="true">
+
+        <com.airbnb.lottie.LottieAnimationView
+            android:id="@+id/lottie_anim_translate"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:visibility="visible"
+            app:lottie_autoPlay="true"
+            app:lottie_fileName="translator.json"
+            app:lottie_loop="true" />
+
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="WATSON TRANSLATOR"
+        android:layout_below="@+id/logo_wrapper"
+        android:textSize="24sp"
+        android:layout_centerHorizontal="true"
+        android:textColor="@color/white"
+        />
+
+
+    <LinearLayout
+        android:id="@+id/language_layout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="50dp"
+        android:orientation="horizontal"
+        android:layout_marginBottom="25dp"
+        android:layout_below="@+id/title"
+        android:layout_centerHorizontal="true">
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_marginRight="20dp"
+            android:layout_marginLeft="10dp">
+
+            <ImageButton
+                android:id="@+id/firstLanguage"
+                android:layout_width="140dp"
+                android:layout_height="80dp"
+                android:background="@drawable/flag_us" />
+
+            <TextView
+                android:id="@+id/firstLanguageText"
+                android:layout_marginTop="10dp"
+                android:layout_width="140dp"
+                android:layout_height="wrap_content"
+                android:text="American English"
+                android:textSize="16dp"
+                android:textColor="@color/white"
+                android:textAlignment="center"/>
+
+        </LinearLayout>
+
+
+        <ImageButton
+            android:id="@+id/swapLanguages"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:layout_gravity="center"
+            android:background="@drawable/ic_swap_horiz_white"/>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_marginRight="10dp"
+            android:layout_marginLeft="20dp">
+
+            <ImageButton
+                android:id="@+id/secondLanguage"
+                android:layout_width="140dp"
+                android:layout_height="80dp"
+                android:background="@drawable/flag_de"
+            />
+
+            <TextView
+                android:id="@+id/secondLanguageText"
+                android:layout_marginTop="10dp"
+                android:layout_width="140dp"
+                android:layout_height="wrap_content"
+                android:text="German"
+                android:textSize="16dp"
+                android:textColor="@color/white"
+                android:textAlignment="center"/>
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <ScrollView
+        android:id="@+id/translatedText_wrapper"
+        android:layout_width="match_parent"
+        android:layout_height="80dp"
+        android:layout_marginRight="50dp"
+        android:layout_marginLeft="50dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginBottom="20dp"
+        android:layout_below="@+id/language_layout">
+
+        <TextView
+            android:textAlignment="center"
+            android:id="@+id/translatedText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="20sp"
+            android:text="Translated Text"
+            android:textColor="@color/white"/>
+
+    </ScrollView>
+
+    <LinearLayout
+        android:id="@+id/lottie_wrapper"
+        android:layout_width="match_parent"
+        android:layout_height="150dp"
+        android:layout_marginLeft="50dp"
+        android:layout_marginRight="50dp"
+        android:layout_marginBottom="10dp"
+        android:layout_above="@id/microphoneButton"
+        android:layout_centerHorizontal="true">
+
+        <com.airbnb.lottie.LottieAnimationView
+            android:id="@+id/lottie_anim_loading"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:visibility="visible"
+            app:lottie_autoPlay="true"
+            app:lottie_fileName="soundwave.json"
+            app:lottie_loop="true" />
+
+    </LinearLayout>
+
+    <ImageButton
+        android:id="@+id/microphoneButton"
+        android:layout_width="96dp"
+        android:layout_height="96dp"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="50dp"
+        android:text="Button"
+        android:textColor="@color/white"
+        android:background="@drawable/ic_mic_white_24dp"/>
+
+
+</RelativeLayout>
